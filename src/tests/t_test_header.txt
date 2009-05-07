@@ -1,0 +1,15 @@
+Revision: freenote--probe-trunk--0--patch-86
+Archive: eric@petta-tech.com--2004s-pti
+Creator: Eric Wong <eric@petta-tech.com>
+Date: Tue Jan  4 18:14:47 PST 2005
+Standard-date: 2005-01-05 02:14:47 GMT
+Modified-files: src/net-modules/http.c
+New-patches: eric@petta-tech.com--2004s-pti/freenote--probe-trunk--0--patch-86
+Summary: allow  SSL for post
+Keywords: a;kdj
+  asdfjk
+  dsfkajlkf
+  kdfkj
+NeX-patches: eric@petta-tech.com--2004s-pti/freenote--probe-trunk--0--patch-86
+
+FOo badkfjl;aksjd

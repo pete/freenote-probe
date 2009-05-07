@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+test x$1 = xpurge || exit 0
+
+update-rc.d freenote-probe remove defaults >/dev/null
+
+rm -rf /var/lib/freenote
+dpkg-statoverride --force --quiet --remove /var/run/freenote
+dpkg-statoverride --force --quiet --remove /var/lib/freenote
+
+getent passwd freenote >/dev/null && deluser --quiet freenote >/dev/null
+
+if test -e /usr/share/debconf/confmodule ; then
+	. /usr/share/debconf/confmodule
+	db_purge
+	db_stop
+fi
+
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+test -x /etc/init.d/freenote-probe || exit 0
+
+if test -x /usr/sbin/invoke-rc.d ; then
+	invoke-rc.d freenote-probe stop
+else
+	/etc/init.d/freenote-probe stop
+fi
+

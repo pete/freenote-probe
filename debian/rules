@@ -1,0 +1,12 @@
+#! /usr/bin/make -f
+DEB_VERSION := $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' ')
+ifneq (,$(findstring rc,$(DEB_VERSION)))
+	export DEB_BUILD_OPTIONS=nostrip,debug
+endif
+DEB_BUILDDIR := build-dir
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+clean::
+	rm -rf $(DEB_BUILDDIR)
+

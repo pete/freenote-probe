@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+TEAM_NAME=petta
+
+. /usr/share/debconf/confmodule
+
+db_input medium freenote-probe/team_name || true
+db_go
+db_get freenote-probe/team_name || true
+
+if test x$RET != x$TEAM_NAME ; then
+	TEAM_NAME="$RET"
+	db_input medium freenote-probe/pin_code || true
+	db_go
+fi
+
+getent passwd freenote >/dev/null || \
+     adduser --quiet --system --home /var/lib/freenote freenote
+
+db_stop
+
+

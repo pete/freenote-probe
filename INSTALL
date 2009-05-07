@@ -1,0 +1,9 @@
+
+# To build the Freenote Probe
+./configure
+make
+make install
+
+# to start the probe:
+fnprobe
+

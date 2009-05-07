@@ -1,0 +1,15 @@
+Template: freenote-probe/team_name
+Type: string
+Default: petta
+Description: Name of your FreeNote team
+ You can register or join a team to accumulate credits.  Leaving the default
+ (petta) is fine in most cases.
+
+Template: freenote-probe/pin_code
+Type: string
+Default: 1234
+Description: PIN code for the team which you're registered.
+ If you've started your own team or joined another, you will need to change
+ the PIN code to one assigned to you by your team.  You do not need to change
+ this if you're using the default FreeNote team (petta).
+

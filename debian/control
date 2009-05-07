@@ -1,0 +1,24 @@
+Source: freenote-probe
+Section: net
+Priority: optional
+Maintainer: FreeNote Team <eric@petta-tech.com>
+Build-Depends: debhelper (>> 4.1.0), cdbs, debconf, libssl-dev, zlib1g-dev
+Standards-Version: 3.6.1.1
+
+Package: freenote-probe
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
+Description: monitoring daemon for FreeNote
+ FreeNote is a free Internet metrics monitoring solution which measures
+ the time different types of Internet connections take. By collecting
+ this data from sources that are both geographically and topologically
+ diverse, FreeNote can accurately measure the reliability and speed of
+ both individual sites and the Internet as a whole. With the information
+ provided by FreeNote, we can work towards providing a better Internet
+ experience for everyone. 
+ .
+ This package contains the FreeNote Probe, a small daemon which probes
+ Internet sites and gathers performance data for the FreeNote project.
+ .
+ URL: http://freenote.petta-tech.com
+

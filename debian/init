@@ -1,0 +1,53 @@
+#!/bin/sh
+set -e
+
+DAEMON=/usr/bin/fnprobe
+test -x "$DAEMON" || exit 0
+
+if [ -n "$FN_INIT_DEBUG" ]; then
+	set -x
+	ssd="/sbin/start-stop-daemon -v -u freenote"
+else 
+	ssd="/sbin/start-stop-daemon -q -u freenote"
+fi
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+PIDFILE=/var/run/freenote/probe.pid 
+
+fnprobe_start () {
+	echo -n "Starting FreeNote Probe: fnprobe"
+	su -s "/bin/sh" \
+	   -c "$ssd -x $DAEMON -p $PIDFILE --start -- --pid-file $PIDFILE --base-dir /var/lib/freenote" \
+	   - freenote
+	echo "."
+}
+
+fnprobe_stop () {
+	echo -n "Stopping FreeNote Probe: fnprobe"
+	$ssd -p "$PIDFILE" --stop || echo -n "... FreeNote Probe is not running"
+	rm -f "$PIDFILE"
+	echo "."
+}
+
+case "$1" in
+	start)
+		fnprobe_start
+		;;
+	stop)
+		fnprobe_stop
+		;;
+	restart)
+		fnprobe_stop
+		fnprobe_start
+		;;
+	reload)
+		test -f "$PIDFILE" && kill -HUP `cat $PIDFILE`
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart|reload}"
+		exit 1
+		;;
+esac
+
+exit 0
+

@@ -1,0 +1,44 @@
+freenote-probe (0.99.9.really1.0.0rc10-1) unstable; urgency=low
+
+  * Debian bureaucracy extends to their software. (1.0.0rc10)
+
+ -- Pete Elmore <pete@petta-tech.com>  Fri, 1 Jul 2005 21:03:07 -0800
+
+freenote-probe (0.99.9.really1.0.0rc9-1) unstable; urgency=low
+
+  * new upstream (1.0.0rc9)
+
+ -- Eric Wong <eric@petta-tech.com>  Fri, 11 Mar 2005 21:03:07 -0800
+
+freenote-probe (0.99.8.really1.0.0rc8-1) unstable; urgency=low
+
+  * new upstream (1.0.0rc8)
+
+ -- Eric Wong <eric@petta-tech.com>  Fri, 11 Mar 2005 12:25:04 -0800
+
+freenote-probe (0.99.7.really1.0.0rc7-2) unstable; urgency=low
+
+  * new upstream (1.0.0rc7)
+  * don't strip for release candidates
+
+ -- Eric Wong <eric@petta-tech.com>  Thu, 10 Mar 2005 19:28:46 -0800
+
+freenote-probe (0.99.5.really1.0.0rc5-1) unstable; urgency=low
+
+  * new upstream (1.0.0rc5)
+
+ -- Eric Wong <eric@petta-tech.com>  Tue,  8 Mar 2005 19:48:12 -0800
+
+freenote-probe (0.99.4.really1.0.0rc4-1) unstable; urgency=low
+
+  * new upstream (1.0.0rc4)
+  * Debconf questions added
+
+ -- Eric Wong <eric@petta-tech.com>  Tue,  8 Mar 2005 18:52:34 -0800
+
+freenote-probe (0.99.1.really1.0.0rc1-1) unstable; urgency=low
+
+  * Initial Debianization
+
+ -- Eric Wong <eric@petta-tech.com>  Fri,  4 Mar 2005 15:05:37 -0800
+

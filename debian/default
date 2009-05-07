@@ -1,0 +1,3 @@
+# Give this a value to disable starting the FreeNote Probe at startup.
+NO_START=
+

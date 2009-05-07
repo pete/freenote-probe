@@ -1,0 +1,87 @@
+.\" Copyright (c) 2005 Petta Technology, Inc.  <freenote@petta-tech.com>
+.TH fnprobe 1  "March 3, 2005" "fnprobe 1.0" "USER COMMANDS"
+.SH NAME
+fnprobe \- network performance monitoring probe
+
+.SH SYNOPSIS
+.B fnprobe
+[\-b \fIdirectory\fR] [\-d \fI0\fR|\fI1\fR] [\-f \fIconfigfile\fR] [\-p \fIpidfile\fR] [\-v] [\-V] [\-h]
+
+.SH DESCRIPTION
+.B fnprobe
+(FreeNote Probe) is a program designed to simulate user agent actions in order to automatically test the performance and reliability of network services.
+
+.SH OPTIONS
+.BR \-b ", " \-\-base-dir
+\fIbasedir\fR
+.TP
+.PP
+Set the base directory where the team information file and keys are stored.  The default \fIbasedir\fR is \fI$HOME/.freenote\fR.
+.PP
+
+.BR \-d ", " \-\-daemon
+\fI0\fR | \fI1\fR
+.TP
+.PP
+A value of \fI0\fR will cause the probe to run in the foreground while a value of \fI1\fR will cause it to run in the background (default).
+.PP
+
+.BR \-f ", " \-\-configfile
+\fIconfigfile\fR
+.TP
+.PP
+Set the location of the configuration file.  The default is \fIbasedir\fR/\fIrc\fR.
+.PP
+
+.BR \-p ", " \-\-pidfile
+\fIpidfile\fR
+.TP
+.PP
+Set the location of the pid file.  The default is \fIbasedir\fR/\fIfnprobe.pid\fR.
+.PP
+
+.BR \-l ", " \-\-log-method \fIlogmethod\fR
+.TP
+.PP
+Set the output of probe messages.  The value \fIlogmethod\fR is a comma seperated list including one or more of the following:
+.TP
+.PP
+\fIsilent\fR \fIstdout\fR \fIsyslog\fR \fIfilelog\fR
+.PP
+
+.BR \-v ", " \-\-verbosity
+\fIlevel\fR
+.TP
+.PP
+Set the verbosity of probe messages to \fIlevel\fR from 0 to 3.
+.PP
+
+.BR \-V ", " \-\-version
+.TP
+.PP
+Display version information.
+.PP
+
+.BR \-h ", " \-\-help
+.TP
+.PP
+Display usage information. 
+.PP
+
+
+
+
+.SH EXAMPLES
+.TP
+Start probe in the foreground in verbose mode with all messages to standard output:
+.PP
+.B fnprobe
+\-d 0 \-\-logmethod stdout \-v 3
+
+.SH EXIT STATUS
+.B fnprobe
+returns a non-zero exit status in case of failure.
+.SH AUTHOR
+Petta Technology, Inc. <freenote@petta-tech.com>
+.PP
+http://freenote.petta-tech.com

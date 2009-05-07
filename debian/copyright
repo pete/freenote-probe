@@ -1,0 +1,49 @@
+This package was debianized by Eric Wong <eric@petta-tech.com> on
+Fri,  4 Mar 2005 15:21:45 -0800
+
+Upstream Author: The FreeNote Team <freenote@petta-tech.com>
+
+This software is copyright (c) 2004-2005 by Petta Technology, Inc.
+
+It was downloaded from http://freenote.petta-tech.com/
+
+Apologies if Flash shows up on the site, I despise Flash and fought
+vigorously against it, but was overruled 6:1 on it by other members of
+the team -- Eric Wong
+
+Copyright:
+
+Released under the terms of the GPL, version 2; see 
+/usr/share/common-licenses/GPL for details.
+
+  "OpenSSL exception:
+
+  In addition, as a special exception, Petta Technology, Inc.
+  gives permission to link the code of portions of this program
+  with the OpenSSL library under certain conditions as described
+  in each individual source file, and distribute linked
+  combinations including the two.
+
+  You must obey the GNU General Public License in all respects for
+  all of the code used other than OpenSSL.  If you modify file(s)
+  with this exception, you may extend this exception to your
+  version of the file(s), but you are not obligated to do so.  If
+  you do not wish to do so, delete this exception statement from
+  your version.  If you delete this exception statement from all
+  source files in the program, then also delete it here.
+
+
+  Ares note:
+
+  For DNS resolution, the FreeNote Probe uses a _modified_ version
+  of the ares asynchronous resolver library.  Our modified ares
+  library, is redistributed under the original terms of the MIT
+  license (free software).  See the comments at the top of
+  src/lib/libares/ares.h for the full license text.
+
+
+  Public domain code:
+
+  For ICMP/ping functionality, we adapted the public domain code
+  of Mike Muuse for our usage."
+

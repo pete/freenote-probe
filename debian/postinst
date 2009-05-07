@@ -1,0 +1,52 @@
+#!/bin/sh
+set -e
+
+ACTION="$1"
+VERSION="$2"
+
+if [ "$ACTION" != "configure" ]; then
+	echo "action: $ACTION is not supported"
+	exit 0
+fi
+
+FNHOME=/var/lib/freenote
+FNTEAM="$FNHOME/probe.team"
+
+getent passwd freenote >/dev/null || \
+  adduser --quiet --system --home "$FNHOME" freenote
+
+if ! dpkg-statoverride --list /var/run/freenote >/dev/null ; then
+	dpkg-statoverride --force --quiet --update --add \
+	  freenote root 0700 /var/run/freenote 
+fi
+if ! dpkg-statoverride --list /var/lib/freenote >/dev/null ; then
+	dpkg-statoverride --force --quiet --update --add \
+	  freenote root 0700 /var/lib/freenote 
+fi
+
+. /usr/share/debconf/confmodule
+
+db_get freenote-probe/team_name || true
+TEAM_NAME="$RET"
+
+db_get freenote-probe/pin_code || true
+PIN_CODE="$RET"
+
+echo "team_name:$TEAM_NAME;"  > "$FNTEAM"
+echo "pin_code:$PIN_CODE;"   >> "$FNTEAM"
+chown -R freenote "$FNHOME"
+
+if test -x /etc/init.d/freenote-probe ; then
+	update-rc.d freenote-probe defaults >/dev/null
+	if test -x /usr/sbin/invoke-rc.d ; then
+		invoke-rc.d freenote-probe restart
+	else
+		/etc/init.d/freenote-probe restart
+	fi
+fi
+
+
+db_stop
+
+exit 0
+

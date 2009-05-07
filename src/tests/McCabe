@@ -1,0 +1,2 @@
+#!/bin/sh
+pmccabe `find | grep \\.c\$ | grep -v ares | grep -v tests/t_ ` | sort -nr | head
